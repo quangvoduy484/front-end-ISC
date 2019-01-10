@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Document</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <style>
+                .menu-option ul >li:hover a
+       {
+                color: #fff;
+                background: #1e282c;
+       }
+       .menu-option a
+       {
+                color: #b8c7ce;
+       }
+       .row
+       {
+               height: 100vh ;
+       }
+       .menu-option >ul
+       {
+
+                height: 100%;
+       }
+      
+
+    
+
+        </style>
+
+</head>
+
+<body>
+
+
+
+        <header>
+
+                <nav class="navbar navbar-expand-lg navbar-light bg-info">
+                        <a class="navbar-brand text-center" href="#">Admin SaiGonTech</a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                                <ul class="nav navbar-nav  ml-auto">
+                                        <li class="nav-link">
+                                                <a href="" class="text-dark nav-item">Login</a>
+                                        </li>
+                                        <li class="nav-link">
+                                                <a href="" class="text-dark nav-item">Logout</a>
+                                        </li>
+                                </ul>
+
+                        </div>
+
+
+
+                </nav>
+
+
+        </header>
+
+
+        <div class="content mr-3">
+                <div class="row">
+                        <div class="col-md-3 col-sm-4 col-lg-2 .col-xl-2 menu-option">
+
+                                <ul class="nav flex-column bg-dark">
+                                        <li class=" nav-item ">
+                                                <a href="#" class="nav-link">Sinh Vien</a>
+                                        </li>
+                                        <li class=" nav-item">
+                                                <a href="#" class="nav-link">Sinh Vien</a>
+                                        </li>
+                                        <li class="nav-item">
+                                                <a href="#" class="nav-link">Thống kê học phí</a>
+                                        </li>
+                                        <li class=" nav-item">
+                                                <a href="#" class="nav-link">Bản đồ</a>
+                                        </li>
+                                </ul>
+
+
+                        </div>
+                        <div class="content col-sm-8 col-md-9 .col-xl-10 col-lg-10" style="padding:20px">
+                                <table class="table table-bordered table-hover">
+                                        <thead class="bg-info">
+                                                <tr>
+                                                        <th scope="col">#</th>
+                                                        <th scope="col">First</th>
+                                                        <th scope="col">Last</th>
+                                                        <th scope="col">Handle</th>
+                                                        <th scope="col">Update </th>
+                                                </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <th scope="row">1</th>
+                                                        <td>Mark</td>
+                                                        <td>Otto</td>
+                                                        <td>@mdo</td>
+                                                        <td>
+                                                                <a href="#update" data-toggle="modal"><img src="./img/update.png"
+                                                                                alt="" width="20px" height="20px"></a>
+                                                                <a href="#delete" data-toggle="modal"><img src="./img/icon_delete.png"
+                                                                                width="20px" height="20px" alt=""></a>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <th scope="row">2</th>
+                                                        <td>Jacob</td>
+                                                        <td>Thornton</td>
+                                                        <td>@fat</td>
+                                                        <td>
+                                                                <a href="#update" data-toggle="modal"><img src="./img/update.png"
+                                                                                alt="" width="20px" height="20px"></a>
+                                                                <a href="#delete" data-toggle="modal"><img src="./img/icon_delete.png"
+                                                                                width="20px" height="20px" alt=""></a>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <th scope="row">3</th>
+                                                        <td>Larry</td>
+                                                        <td>the Bird</td>
+                                                        <td>@twitter</td>
+                                                        <td>
+                                                                <a href="#update" data-toggle="modal"><img src="./img/update.png"
+                                                                                alt="" width="20px" height="20px"></a>
+                                                                <a href="#delete" data-toggle="modal"><img src="./img/icon_delete.png"
+                                                                                width="20px" height="20px" alt=""></a>
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                </table>
+                        </div>
+                </div>
+
+
+
+
+        </div>
+        <div class="modal fade" id="update" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                                <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalCenterTitle">Update</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                        </button>
+                                </div>
+                                <div class="modal-body">
+                                        ...
+                                </div>
+                                <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
+                        </div>
+                </div>
+        </div>
+        <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                                <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalCenterTitle">Delete</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                        </button>
+                                </div>
+                                <div class="modal-body">
+                                        ...
+                                </div>
+                                <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                </div>
+                        </div>
+                </div>
+        </div>
+
+
+        <script src="js/jquery-3.3.1.min.js"></script>
+        <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
