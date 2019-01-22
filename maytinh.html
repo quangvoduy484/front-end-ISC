@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en" class="h-100">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+
+    <title>Bài 3</title>
+</head>
+
+<body class="h-100">
+    <div class="container h-100">
+        <div class="row justify-content-center  align-items-center h-100">
+            <div class="col-md-4">
+                <div class="card text-center ">
+                        <div class="card-header text-center bg-transparent text-dark">
+                                <h3>Calculator</h3>
+                        </div>
+                        <div class="card-body">
+                        <div class="form-group">
+                            <input type="text" id="value_ketqua" value=""  class="form-control">
+                           
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="value_tamthoi" value=""  class="form-control">
+                        </div>
+                        <div>
+                            <button type="button" value="1" id="btn_mot">1</button>
+                            <button type="button" value="2" id="btn_hai">2</button>
+                            <button type="button" value="3" id="btn_hai">3</button>
+                        </div> 
+                        <div>
+                            
+                            <a id="btn_clear_CE" href="#">CE</a>
+                            <a id="btn_clear" href="#">C</a>
+                            <a id="btn_cong" href="#" value="+">+</a>
+                            <a id="btn_result" href="#">=</a>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script>
+
+        $(function () {
+            var value_tamthoi = "0";
+            $('#value_tamthoi').val(value_tamthoi);
+
+            $('button').click(function () {
+                if ($('#value_tamthoi').val() == "0") {
+                    value_tamthoi = $(this).val();
+                    $('#value_tamthoi').val(value_tamthoi)
+                }
+                else {
+                    if ($('#value_ketqua').val() != "") {
+                        $('#value_tamthoi').val($(this).val());
+
+                    }
+                    else {
+
+                        $('#value_tamthoi').val(value_tamthoi + $(this).val());
+                        value_tamthoi = $('#value_tamthoi').val();
+                    }
+
+
+                }
+
+
+
+            });
+
+
+
+            var result_ketqua = 0;
+            $('#btn_cong').click(function () {
+
+                var result_tamthoi = $('#value_tamthoi').val();
+                if ($('#value_ketqua').val() == "") {
+                    $('#value_ketqua').val(result_tamthoi + $(this).text());
+                    result_ketqua += parseInt(result_tamthoi);
+                }
+                else {
+
+                    result_ketqua += parseInt(result_tamthoi);
+
+                    $('#value_ketqua').val($('#value_ketqua').val() + result_tamthoi + $(this).text());
+                    $('#value_tamthoi').val(result_ketqua);
+
+
+                }
+
+
+            });
+
+            $('#btn_result').click(function () {
+
+                result_ketqua += parseInt($('#value_tamthoi').val());
+                $('#value_tamthoi').val(result_ketqua);
+                $('#value_ketqua').val("");
+                result_ketqua = 0;
+
+            });
+
+            
+            $('#btn_clear').click(function(){
+                $('#value_ketqua').val("");
+                $('#value_tamthoi').val("0");
+            });
+
+            $('#btn_clear_CE').click(function(){
+               
+                $('#value_tamthoi').val("0");
+            });
+
+
+
+
+
+
+
+        });
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
