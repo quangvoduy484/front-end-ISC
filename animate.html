@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en" class="h-100">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="Plug/nivoslider/themes/default/default.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="Plug/nivoslider/themes/light/light.css" type="text/css" media="screen" />   
+    <link rel="stylesheet" href="Plug/nivoslider/nivo-slider.css">
+    <title>Bài 3</title>
+</head>
+
+<body>
+
+    <!-- <div class="container">
+            <div class="row mt-5">
+                <div class="col"><input type="text" value="" id="txtA"></div>
+                <div class="col"> 
+                    <select name="" id="dropvalue">
+                        <option value="+">+</option> 
+                        <option value="-">-</option>
+                        <option value="*">*</option>
+                    </select>
+                    </div>
+                <div class="col"><input type="text" value="" id="txtB"></div>
+            </div>
+            <input type="button" id="btn-result" value="Result" class="mt-5 btn btn-primary" />
+            <span id="result"></span> -->
+
+   <!-- <button id="btn-show">show</button>
+    <button id="btn-hide">hide</button>
+    <button id="btn-toggle">toggle</button> -->
+    <!-- <select name="sweets" multiple="multiple">
+            <option>Chocolate</option>
+            <option selected="selected">Candy</option>
+            <option>Taffy</option>
+            <option selected="selected">Caramel</option>
+            <option>Fudge</option>
+            <option>Cookie</option>
+    </select>
+    <div></div> -->
+    <div id="wrapper">
+           
+    
+            <div class="slider-wrapper theme-default">
+                <div id="slider" class="nivoSlider">
+                    <img src="images/toystory.jpg" data-thumb="images/toystory.jpg" alt="" />
+                    <a href="http://dev7studios.com"><img src="images/up.jpg" data-thumb="images/up.jpg" alt="" title="This is an example of a caption" /></a>
+                    <img src="images/walle.jpg" data-thumb="images/walle.jpg" alt="" data-transition="slideInLeft" />
+                    <img src="images/nemo.jpg" data-thumb="images/nemo.jpg" alt="" title="#htmlcaption" />
+                </div>
+                <div id="htmlcaption" class="nivo-html-caption">
+                    <strong>This</strong> is an example of a <em>HTML</em> caption with <a href="#">a link</a>. 
+                </div>
+            </div>
+    
+        </div>
+
+
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="Plug/nivoslider/jquery.nivo.slider.pack.js"></script>
+    <script type="text/javascript" src="Plug/nivoslider/jquery.nivo.slider.js"></script>
+    <script>
+        //fadein khác với show nó hiện mờ sau đó hiện rõ , mờ dần xong và ẩn đi 
+        // keypress chỉ nhận kí tự bình thường
+        // keydown nhấn xuống và thả ra keyup 
+        // blur luoond di với focus (blur là rời đi )
+
+
+        ///
+
+
+
+
+
+
+
+
+        ///
+
+
+
+
+
+
+
+
+
+
+        $(function () {
+            // Thuộc tính làm mờ trong button 
+            //$("#btn-result").attr('disabled','disabled');
+
+            // each duyệt qua từng phần từ
+            $('#slider').nivoSlider();
+            $("select")
+                .change(function () {
+                
+                    $("select option:selected").each(function () {
+                        str += $(this).text() + " ";
+                    });
+                    $("div").text(str);
+                })
+                .change();
+            $('#txtA,#txtB,#dropvalue').change(function () {
+                Calculate();
+            });
+
+            $('input').focus(function () {
+                $(this).css("background-color", "yellow")
+            });
+            $('input').blur(function () {
+                $(this).css("background-color", "white")
+            });
+
+
+
+
+            function Calculate() {
+
+                var a = $('#txtA').val();
+                var b = $('#txtB').val();
+                var c = $('#dropvalue').val();
+                console.log(a, b, c);
+                var result = 0;
+                switch (c) {
+                    case '+':
+                        result = Number(a) + Number(b);
+                        break;
+                    case '-':
+                        result = Number(a) - Number(b);
+                        break;
+                    case '*':
+                        result = Number(a) * Number(b);
+                        break;
+                    case '/':
+                        result = Number(a) / Number(b);
+                        break;
+
+                }
+                $('#result').text(result);
+            }
+
+        });
+    </script>
+</body>
